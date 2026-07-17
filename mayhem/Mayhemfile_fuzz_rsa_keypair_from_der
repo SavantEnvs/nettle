@@ -1,0 +1,9 @@
+project: savantenvs/nettle
+target: fuzz_rsa_keypair_from_der
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_rsa_keypair_from_der/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_rsa_keypair_from_der
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_rsa_keypair_from_der.dict
