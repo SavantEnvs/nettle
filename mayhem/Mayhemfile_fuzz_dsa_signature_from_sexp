@@ -1,0 +1,9 @@
+project: savantenvs/nettle
+target: fuzz_dsa_signature_from_sexp
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_dsa_signature_from_sexp/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_dsa_signature_from_sexp
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_dsa_signature_from_sexp.dict
