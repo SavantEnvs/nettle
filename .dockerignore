@@ -1,0 +1,26 @@
+# .dockerignore for the commit-image build.
+# Goal: bake in the FULL repo (including .git history — the grader uses it),
+# dropping only local build artifacts and editor/OS cruft. Dev image, not minimal.
+
+# ── Build outputs / local cruft ──────────────────────────────────────────────
+# build.sh produces its outputs under /mayhem at build time; the install prefix and
+# in-tree autotools artifacts must not leak in from a local build of the context.
+nettle-install/
+mayhem-build/
+mayhem-build-test/
+mayhem-tests/
+out/
+.lib/
+.deps/
+*.o
+*.lo
+*.la
+*.a
+*.so
+*.dylib
+**/__pycache__/
+
+# ── Editor / OS noise ────────────────────────────────────────────────────────
+.DS_Store
+*.swp
+*~
